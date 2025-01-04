@@ -1,7 +1,7 @@
-drop table posts;
-drop table threads;
-drop table sessions;
-drop table users;
+drop table if exists posts;
+drop table if exists threads;
+drop table if exists sessions;
+drop table if exists users;
 
 
 create table users (
@@ -11,7 +11,7 @@ create table users (
   email      varchar(255) not null unique,
   password   varchar(255) not null,
   created_at timestamp not null   
-);
+); 
 
 create table sessions (
   id         serial primary key,
