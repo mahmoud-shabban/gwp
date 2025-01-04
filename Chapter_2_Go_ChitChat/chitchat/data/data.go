@@ -15,8 +15,13 @@ var Db *sql.DB
 func init() {
 	var err error
 	Db, err = sql.Open("postgres", "user=postgres dbname=postgres password=root host=192.168.1.9 sslmode=disable")
+	// constr := "user=postgres dbname=postgres password=root host=192.168.1.9 sslmode=disable"
+
+	// Db, err = sql.Open("postgres", constr)
 	if err != nil {
 		log.Fatal(err)
+	} else {
+		fmt.Println(Db.Stats())
 	}
 	return
 }
